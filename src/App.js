@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import lo from 'buffer-layout';
 
 function App() {
+  const array = new Uint8Array(1);
+  lo.u8().encode(255, array);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {JSON.stringify(array)}
     </div>
   );
 }
